@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qdu.dao.LoginMapper">
+    <insert id="userRegister" parameterType="User">
+        insert into news.user(userName,userPwd,userTel,userEmail,userStatus)
+        values (#{userName},#{userPwd},#{userTel},#{userEmail},#{userStatus})
+    </insert>
+
+
+</mapper>

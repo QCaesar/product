@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qdu.dao.UserMapper">
+
+<!--    addUser  (userId,userName,userPwd,userTel,userEmail,userStatus)-->
+    <insert id="addUser" parameterType="User">
+        insert into news.user (userName,userPwd,userTel,userEmail,userStatus,userState)
+        values (#{userName},#{userPwd},#{userTel},#{userEmail},#{userStatus},#{userState})
+    </insert>
+    
+    <delete id="deleteUserById" parameterType="int">
+        delete from news.user where userId=#{userId}
+    </delete>
+
+    <update id="updateUser" parameterType="User">
+        update news.user set userName=#{userName},userPwd=#{userPwd},userTel=#{userTel},
+        userEmail=#{userEmail},userStatus=#{userStatus},userState=#{userState}
+        where userId=#{userId};
+    </update>
+
+    <select id="queryUserById" resultType="User">
+        select *from news.user where userId=#{userId}
+    </select>
+
+    <select id="queryAllUser" resultType="User">
+        select *from news.user
+    </select>
+
+    <select id="queryUserByName" resultType="User">
+        select *from news.user where binary userName=#{userName}
+    </select>
+</mapper>
