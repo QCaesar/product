@@ -37,9 +37,10 @@
         </div>
     </div>
 
-    <form action="${pageContext.request.contextPath}" method="post">
+    <form action="${pageContext.request.contextPath}/login/userQuery" method="post">
         <div class="form-group">
             <label>用户名称</label>
+            <span style="color: red;font-weight: bold">${repeat}</span>
             <input type="text" name="userName" class="form-control" >
         </div>
         <div class="form-group">

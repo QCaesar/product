@@ -9,5 +9,7 @@
         values (#{userName},#{userPwd},#{userTel},#{userEmail},#{userStatus})
     </insert>
 
-
+    <select id="userRegisterQueryByName" resultType="User">
+        select *from news.user where binary userName=#{userName}
+    </select>
 </mapper>
