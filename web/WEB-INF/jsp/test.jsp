@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>test success</h1>
+<p>欢迎${sessionScope.user.userStatus}${sessionScope.user.userName}</p>
 </body>
 </html>

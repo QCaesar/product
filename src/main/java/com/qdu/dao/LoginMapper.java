@@ -10,4 +10,6 @@ public interface LoginMapper {
     //用户注册查询有无重名
 
     User userRegisterQueryByName(String userName);
+
+    User userLoginQueryPasswordByName(String userName);
 }

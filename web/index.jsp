@@ -12,5 +12,6 @@
   </head>
   <body>
   <a href="/login/toRegister">注册</a>
+  <a href="/login/touserLogin">登陆</a>
   </body>
 </html>

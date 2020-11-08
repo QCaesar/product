@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -43,5 +45,27 @@ public class LoginController {
         }
         loginService.userRegister(user);
         return "test";
+    }
+
+    @RequestMapping("/touserLogin")
+    public String touserLogin(Model model){
+        
+        return "userLogin";
+    }
+
+    @RequestMapping("/userLogin")
+    public String userLogin(String userName, String userPwd, HttpSession session,Model model) {
+        User user = loginService.userRegisterQueryByName(userName);
+
+        if (user != null && user.getUserPwd().equals(userPwd)) {
+            session.setAttribute("user", user);
+
+            return "test";
+        }
+        else{
+            model.addAttribute("error","用户名不存在或密码错误！");
+            return "userLogin";
+        }
+
     }
 }
