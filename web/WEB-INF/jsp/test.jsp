@@ -13,5 +13,7 @@
 <body>
 <h1>test success</h1>
 <p>欢迎${sessionScope.user.userStatus}${sessionScope.user.userName}</p>
+<a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a>
+<a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a>
 </body>
 </html>

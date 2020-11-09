@@ -10,5 +10,6 @@
 <mappers>
     <mapper class="com.qdu.dao.UserMapper"/>
     <mapper class="com.qdu.dao.LoginMapper"/>
+    <mapper class="com.qdu.dao.ReportMapper"/>
 </mappers>
 </configuration>

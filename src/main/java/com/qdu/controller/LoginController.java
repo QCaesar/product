@@ -68,4 +68,43 @@ public class LoginController {
         }
 
     }
+
+    @RequestMapping("/updateUserInfo")
+    public String updateUserInfo(User user){
+        loginService.updateUserInfo(user);
+        return "test";
+    }
+
+    @RequestMapping("/toupdateUserInfo")
+    public String toupdateUserInfo(String userName,Model model){
+        User user = loginService.userRegisterQueryByName(userName);
+        model.addAttribute("QUser",user);
+        return "updateUserByMySelf";
+    }
+
+    @RequestMapping("/toupdateUserPwd")
+    public String toupdateUserPwd(String userName,Model model){
+        User user = loginService.userRegisterQueryByName(userName);
+        model.addAttribute("QUser",user);
+        return "updateUserPasswordByMySelf";
+    }
+    @RequestMapping("/toupdateUserPwd1")
+    public String toupdateUserPwd1(String userName,Model model){
+        User user = loginService.userRegisterQueryByName(userName);
+        model.addAttribute("QUser",user);
+        model.addAttribute("error","原密码错误");
+        return "updateUserPasswordByMySelf";
+    }
+
+    @RequestMapping("/updateUserPwd")
+    public String updateUserPwd(String userName,String userPwdPrevious,Model model,User user){
+        if (userPwdPrevious.equals(loginService.queryUserPasswordByName(userName))){
+            loginService.updateUserInfoPassword(user);
+            return "test";
+        }
+
+        String userName1 = user.getUserName();
+        return "redirect:/login/toupdateUserPwd1?userName="+userName1;
+    }
+
 }

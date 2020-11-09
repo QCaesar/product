@@ -11,5 +11,10 @@ public interface LoginMapper {
 
     User userRegisterQueryByName(String userName);
 
-    User userLoginQueryPasswordByName(String userName);
+
+    int updateUserInfo(User user);
+
+    int updateUserInfoPassword(User user);
+
+    String queryUserPasswordByName(String userName);
 }

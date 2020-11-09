@@ -13,4 +13,15 @@
         select *from news.user where binary userName=#{userName}
     </select>
 
+    <update id="updateUserInfo" parameterType="User">
+        update news.user set userTel=#{userTel},userEmail=#{userEmail} where userName=#{userName};
+    </update>
+
+    <update id="updateUserInfoPassword" parameterType="User">
+        update news.user set userPwd=#{userPwd} where userName=#{userName};
+    </update>
+
+    <select id="queryUserPasswordByName" parameterType="String" resultType="String">
+        select userPwd from news.user  where userName=#{userName};
+    </select>
 </mapper>
