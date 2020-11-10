@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qdu.dao.ReportMapper">
+
+
+    <insert id="addReport" parameterType="Report">
+        insert into news.report (`reName`,`reAuthor`,`reType`,`reContext`)
+        values (#{reName},#{reAuthor},#{reType},#{reContext})
+    </insert>
+
+
+    <select id="queryAllReport" resultType="Report">
+        select *from news.report
+    </select>
+
+    <select id="queryReportById" resultType="Report">
+        select *from news.report where reId=#{reId}
+    </select>
+
+    <select id="queryReportByName" resultType="Report">
+        select * from news.report where binary `reName`=#{reName}
+    </select>
+
+    <select id="queryAllReportNotPass" resultType="Report">
+        select *from news.report where reState='未审核';
+    </select>
+
+    <delete id="deleteReport" parameterType="int">
+        delete from news.report where reId=#{reId};
+    </delete>
+
+    <update id="updateReport" parameterType="Report">
+        update news.report set `reName`=#{reName},`reAuthor`=#{reAuthor},`reType`=#{reType},`reContext`=#{reContext},`reState`=#{reState}
+        where reId=#{reId};
+    </update>
+
+    <update id="updateReportState" parameterType="Report">
+        update news.report set `reState`='正常' where reId=#{reId};
+    </update>
+</mapper>
