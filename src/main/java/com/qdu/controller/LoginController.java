@@ -28,12 +28,12 @@ public class LoginController {
         return "userRegister";
     }
 
-//Test
-    @RequestMapping("/userRegister")
-    public String userRegister(User user) {
-        loginService.userRegister(user);
-        return "test";
-    }
+////Test
+//    @RequestMapping("/userRegister")
+//    public String userRegister(User user) {
+//        loginService.userRegister(user);
+//        return "userLogin2";
+//    }
 
     @RequestMapping("/userQuery")
     public String userQuery(String userName, User user, Model model) {//可自动获取userName input中username的值
@@ -44,7 +44,7 @@ public class LoginController {
             return "userRegister";
         }
         loginService.userRegister(user);
-        return "test";
+        return "userLogin2";
     }
 
     @RequestMapping("/touserLogin")
@@ -56,6 +56,10 @@ public class LoginController {
     @RequestMapping("/userLogin")
     public String userLogin(String userName, String userPwd, HttpSession session,Model model) {
         User user = loginService.userRegisterQueryByName(userName);
+
+        if(userName.equals("admin")&&userPwd.equals("123456")){
+            return "managementIndex";
+        }
 
         if (user != null && user.getUserPwd().equals(userPwd)) {
             session.setAttribute("user", user);
@@ -107,4 +111,8 @@ public class LoginController {
         return "redirect:/login/toupdateUserPwd1?userName="+userName1;
     }
 
+    @RequestMapping("/tomanagementIndex")
+    public String tomanagementIndex(){
+        return "managementIndex";
+    }
 }

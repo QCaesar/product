@@ -5,8 +5,8 @@
 
 <mapper namespace="com.qdu.dao.LoginMapper">
     <insert id="userRegister" parameterType="User">
-        insert into news.user(userName,userPwd,userTel,userEmail,userStatus)
-        values (#{userName},#{userPwd},#{userTel},#{userEmail},#{userStatus})
+        insert into news.user(userName,userPwd,userTel,userEmail)
+        values (#{userName},#{userPwd},#{userTel},#{userEmail})
     </insert>
 
     <select id="userRegisterQueryByName" resultType="User">

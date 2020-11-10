@@ -6,6 +6,7 @@
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<%@include file="managementDaoHang.jsp"%>
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">

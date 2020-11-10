@@ -15,12 +15,13 @@
 
 </head>
 <body>
+<%@include file="managementDaoHang.jsp"%>
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>用户列表</small>
+                    <small style="font-size: 35px">用户列表</small>
                 </h1>
             </div>
         </div>
