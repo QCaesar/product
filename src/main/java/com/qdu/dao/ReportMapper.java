@@ -30,5 +30,6 @@ public interface ReportMapper {
 
     int updateReportState(Report report);
 
+    int updateReportStateNot(Report report);
 
 }

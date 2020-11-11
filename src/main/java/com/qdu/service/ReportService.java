@@ -28,5 +28,7 @@ public interface ReportService {
 
     int updateReportState(Report report);
 
+    int updateReportStateNot(Report report);
+
 
 }

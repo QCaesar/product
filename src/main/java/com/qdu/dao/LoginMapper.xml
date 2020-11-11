@@ -24,4 +24,13 @@
     <select id="queryUserPasswordByName" parameterType="String" resultType="String">
         select userPwd from news.user  where userName=#{userName};
     </select>
+
+    <insert id="addReportByEditor" parameterType="Report">
+        insert into news.report(`reName`,`reAuthor`,`reType`,`reContext`,`reState`)
+        values (#{reName},#{reAuthor},#{reType},#{reContext},'未审核');
+    </insert>
+
+    <select id="queryReportEditor" resultType="Report" parameterType="String">
+        select * from news.report where reAuthor=#{userName};
+    </select>
 </mapper>

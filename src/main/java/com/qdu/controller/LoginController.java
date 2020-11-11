@@ -1,5 +1,6 @@
 package com.qdu.controller;
 
+import com.qdu.pojo.Report;
 import com.qdu.pojo.User;
 import com.qdu.service.LoginService;
 import com.qdu.service.LoginServiceImpl;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/login")
@@ -115,4 +117,23 @@ public class LoginController {
     public String tomanagementIndex(){
         return "managementIndex";
     }
+
+    @RequestMapping("/toaddReportByEditor")
+    public String toaddReportByEditor(){
+        return "addReportEditor";
+    }
+    @RequestMapping("/addReportByEditor")
+    public String addReportByEditor(Report report){
+        loginService.addReportByEditor(report);
+        return "test";
+    }
+
+    @RequestMapping("/queryReportByEditor")
+    public String queryReportByEditor(String userName,Model model){
+        List<Report> reports = loginService.queryReportEditor(userName);
+        model.addAttribute("reportList",reports);
+        return "allReportEditor";
+    }
+
+
 }

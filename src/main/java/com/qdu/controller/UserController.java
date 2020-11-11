@@ -73,6 +73,23 @@ public class UserController {
         return "allUser";
     }
 
+    @RequestMapping("/queryUserWaitPass")
+    public String queryUserWaitPass(Model model){
+        List<User> userWaitPass=userService.queryUserWaitPass();
+        model.addAttribute("userList",userWaitPass);
+        return "allUserWaitPass";
+    }
 
+    @RequestMapping("/updateUserStatus")
+    public String updateUserStatus(User user){
+        userService.updateUserStatus(user);
+        return "redirect:/user/queryUserWaitPass";
+    }
+
+    @RequestMapping("/updateUserStatusNot")
+    public String updateUserStatusNot(User user){
+        userService.updateUserStatusNot(user);
+        return "redirect:/user/queryUserWaitPass";
+    }
 
 }

@@ -44,4 +44,8 @@ public class ReportServiceImpl implements ReportService {
     public int updateReportState(Report report) {
         return reportMapper.updateReportState(report);
     }
+
+    public int updateReportStateNot(Report report) {
+        return reportMapper.updateReportStateNot(report);
+    }
 }

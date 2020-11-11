@@ -1,7 +1,10 @@
 package com.qdu.service;
 
 import com.qdu.dao.LoginMapper;
+import com.qdu.pojo.Report;
 import com.qdu.pojo.User;
+
+import java.util.List;
 
 public class LoginServiceImpl implements LoginService{
 
@@ -29,5 +32,13 @@ public class LoginServiceImpl implements LoginService{
 
     public String queryUserPasswordByName(String userName) {
         return loginMapper.queryUserPasswordByName(userName);
+    }
+
+    public int addReportByEditor(Report report) {
+        return loginMapper.addReportByEditor(report);
+    }
+
+    public List<Report> queryReportEditor(String userName) {
+        return loginMapper.queryReportEditor(userName);
     }
 }

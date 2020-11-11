@@ -1,6 +1,9 @@
 package com.qdu.service;
 
+import com.qdu.pojo.Report;
 import com.qdu.pojo.User;
+
+import java.util.List;
 
 public interface LoginService {
 
@@ -16,4 +19,8 @@ public interface LoginService {
     int updateUserInfoPassword(User user);
 
     String queryUserPasswordByName(String userName);
+
+    int addReportByEditor(Report report);
+
+    List<Report> queryReportEditor(String userName);
 }

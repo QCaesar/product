@@ -36,4 +36,16 @@ public class UserServiceImpl implements UserService {
     public User queryUserByName(String userName) {
         return userMapper.queryUserByName(userName);
     }
+
+    public List<User> queryUserWaitPass() {
+        return userMapper.queryUserWaitPass();
+    }
+
+    public int updateUserStatus(User user) {
+        return userMapper.updateUserStatus(user);
+    }
+
+    public int updateUserStatusNot(User user) {
+        return userMapper.updateUserStatusNot(user);
+    }
 }

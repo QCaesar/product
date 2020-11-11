@@ -1,6 +1,7 @@
 package com.qdu.dao;
 
 import com.qdu.pojo.User;
+import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator;
 
 import java.util.List;
 
@@ -23,4 +24,10 @@ public interface UserMapper {
 
     //查询用户byname
     User queryUserByName(String userName);
+
+    List<User> queryUserWaitPass();
+
+    int updateUserStatus(User user);
+
+    int updateUserStatusNot(User user);
 }

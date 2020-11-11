@@ -22,4 +22,11 @@ public interface UserService {
 
     //查询用户byname
     User queryUserByName(String userName);
+
+    List<User> queryUserWaitPass();
+
+    int updateUserStatus(User user);
+
+    int updateUserStatusNot(User user);
+    
 }

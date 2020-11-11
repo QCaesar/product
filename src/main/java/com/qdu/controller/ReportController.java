@@ -62,6 +62,7 @@ public class ReportController {
     @RequestMapping("/toupdateReport")
     public String updateUser(int reId,Model model){
         Report report = reportService.queryReportById(reId);
+        //System.out.println(report.getReAddTime());
         model.addAttribute("QReport",report);
         return "updateReport";
     }
@@ -88,6 +89,12 @@ public class ReportController {
     @RequestMapping("/updateReportState")
     public String updateReportState(Report report){
         reportService.updateReportState(report);
+        return "redirect:/report/allReportNotPass";
+    }
+
+    @RequestMapping("/updateReportStateNot")
+    public String updateReportStateNot(Report report){
+        reportService.updateReportStateNot(report);
         return "redirect:/report/allReportNotPass";
     }
 

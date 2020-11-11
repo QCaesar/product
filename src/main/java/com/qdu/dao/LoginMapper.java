@@ -1,6 +1,9 @@
 package com.qdu.dao;
 
+import com.qdu.pojo.Report;
 import com.qdu.pojo.User;
+
+import java.util.List;
 
 public interface LoginMapper {
 
@@ -17,4 +20,8 @@ public interface LoginMapper {
     int updateUserInfoPassword(User user);
 
     String queryUserPasswordByName(String userName);
+
+    int addReportByEditor(Report report);
+
+    List<Report> queryReportEditor(String userName);
 }

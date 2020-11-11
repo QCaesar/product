@@ -32,4 +32,16 @@
     <select id="queryUserByName" resultType="User">
         select *from news.user where binary userName=#{userName}
     </select>
+
+    <select id="queryUserWaitPass" resultType="User">
+        select * from news.user where userStatus='待审查'
+    </select>
+
+    <update id="updateUserStatus" parameterType="User">
+        update news.user set userStatus='编辑' where userId=#{userId};
+    </update>
+
+    <update id="updateUserStatusNot" parameterType="User">
+        update news.user set userStatus='普通用户' where userId=#{userId};
+    </update>
 </mapper>

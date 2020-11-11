@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <html>
 <head>
     <title>用户列表</title>
@@ -73,13 +74,14 @@
                         <td>${report.reAuthor}</td>
                         <td>${report.reType}</td>
                         <td>${report.reContext}</td>
-                        <td>${report.reAddTime}</td>
+                        <td><fmt:formatDate value="${report.reAddTime}" pattern="yyyy-MM-dd  HH:mm:ss"/></td>
                         <td>${report.reState}</td>
 
                         <td>
-                            <a href="${pageContext.request.contextPath}/report/updateReportState?reId=${report.reId}">通过</a>  |&nbsp;
-                            <a href="${pageContext.request.contextPath}/report/updateReport?reId=${report.reId}">修改</a>  |&nbsp;
-                            <a href="${pageContext.request.contextPath}/report/deleteReport?reId=${report.reId}">删除</a>
+                            <a href="${pageContext.request.contextPath}/report/updateReportState?reId=${report.reId}">审核通过</a>  |&nbsp;
+                            <a href="${pageContext.request.contextPath}/report/updateReportStateNot?reId=${report.reId}">拒绝</a>
+
+
                         </td>
                     </tr>
                 </c:forEach>
