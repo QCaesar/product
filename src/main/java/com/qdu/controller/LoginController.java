@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -59,21 +60,24 @@ public class LoginController {
     public String userLogin(String userName, String userPwd, HttpSession session,Model model) {
         User user = loginService.userRegisterQueryByName(userName);
 
-        if(userName.equals("admin")&&userPwd.equals("123456")){
+        if (userName.equals("admin") && userPwd.equals("123456")) {
             return "managementIndex";
         }
 
         if (user != null && user.getUserPwd().equals(userPwd)) {
             session.setAttribute("user", user);
-
-            return "test";
+            if (user.getUserStatus().equals("普通用户") || user.getUserStatus().equals("待审查"))
+                {return "newsIndexUser";}
+            if (user.getUserStatus().equals("编辑"))
+                {return "newsIndexEditor";}
         }
-        else{
-            model.addAttribute("error","用户名不存在或密码错误！");
+        else {
+            model.addAttribute("error", "用户名不存在或密码错误！");
             return "userLogin";
         }
-
+        return null;
     }
+
 
     @RequestMapping("/updateUserInfo")
     public String updateUserInfo(User user){
@@ -135,5 +139,24 @@ public class LoginController {
         return "allReportEditor";
     }
 
+    @RequestMapping("/updateUserStatusApply")
+    public String updateUserStatusApply(User user){
+        loginService.updateUserStatusApply(user);
+        return "newsIndexUser";
+    }
+
+    @RequestMapping("/queryReportByType")
+    public String queryReportByType(Model model,String reType){
+        List<Report> reports=loginService.queryReportByType(reType);
+        model.addAttribute("reportList",reports);
+        return "newsShow";
+    }
+
+    @RequestMapping("/showReport")
+    public String showReport(String reName,Model model){
+        Report report = loginService.queryReportByName(reName);
+        model.addAttribute("report",report);
+        return "newsRead";
+    }
 
 }

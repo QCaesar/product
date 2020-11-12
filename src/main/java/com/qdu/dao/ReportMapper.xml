@@ -42,6 +42,6 @@
     </update>
 
     <update id="updateReportStateNot" parameterType="Report">
-        update news.report set `reState`='未通过审核' where reId=#{reId};
+        update news.report set `reState`='未通过' where reId=#{reId};
     </update>
 </mapper>

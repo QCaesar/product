@@ -24,4 +24,10 @@ public interface LoginMapper {
     int addReportByEditor(Report report);
 
     List<Report> queryReportEditor(String userName);
+
+    int updateUserStatusApply(User user);
+
+    List<Report> queryReportByType(String reType);
+
+    Report queryReportByName(String reName);
 }

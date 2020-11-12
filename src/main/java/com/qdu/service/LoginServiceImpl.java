@@ -41,4 +41,16 @@ public class LoginServiceImpl implements LoginService{
     public List<Report> queryReportEditor(String userName) {
         return loginMapper.queryReportEditor(userName);
     }
+
+    public int updateUserStatusApply(User user) {
+        return loginMapper.updateUserStatusApply(user);
+    }
+
+    public List<Report> queryReportByType(String reType) {
+        return loginMapper.queryReportByType(reType);
+    }
+
+    public Report queryReportByName(String reName) {
+        return loginMapper.queryReportByName(reName);
+    }
 }

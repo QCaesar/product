@@ -33,4 +33,16 @@
     <select id="queryReportEditor" resultType="Report" parameterType="String">
         select * from news.report where reAuthor=#{userName};
     </select>
+
+    <update id="updateUserStatusApply" parameterType="User">
+        update news.user set userStatus='待审查' where userId=#{userId};
+    </update>
+
+    <select id="queryReportByType" resultType="Report" parameterType="String">
+        select *from news.report where reType=#{reType};
+    </select>
+
+    <select id="queryReportByName" resultType="Report" parameterType="String">
+        select *from news.report where `reName`=#{reName};
+    </select>
 </mapper>
