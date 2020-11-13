@@ -26,6 +26,9 @@
         <input type="hidden" name="userId" value="${QUser.userId}">
         <%-- ******       --%>
         <input type="hidden" name="userName" value="${sessionScope.user.userName}">
+
+        <input type="hidden" name="userStatus" value="${QUser.userStatus}">
+
         <div class="form-group">
             <label>用户名称${QUser.userName}</label>
 

@@ -56,23 +56,23 @@
 
         <div class="col-sm-7">
             <c:forEach var="report"  items="${reportList}">
-            <div class="news-list">
-                <div class="news-list-item clearfix">
+                <div class="news-list">
+                    <div class="news-list-item clearfix">
 
-                    <div class="col-xs-7">
-                        <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
-                        <div class="info">
-                            <span class="avatar"><img src="../static/img/logo.png"></span>
-                            <span>王花花</span>•
-                            <span>25k评论</span>•
-                            <span>10分钟前</span>
+                        <div class="col-xs-7">
+                            <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
+                            <div class="info">
+                                <span class="avatar"><img src="../static/img/logo.png"></span>
+                                <span>王花花</span>•
+                                <span>25k评论</span>•
+                                <span>10分钟前</span>
+                            </div>
                         </div>
                     </div>
+
+
+
                 </div>
-
-
-
-            </div>
             </c:forEach>
         </div>
         <div class="col-sm-3">

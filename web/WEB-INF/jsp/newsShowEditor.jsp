@@ -35,6 +35,8 @@
                 <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
                 <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
                 <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a href="/login/toaddReportByEditor">添加新闻</a></li>
+                <li><a href="/login/queryReportByEditor?userName=${sessionScope.user.userName}">我的文章</a></li>
             </ul>
         </div>
     </div>
@@ -44,35 +46,35 @@
         <div class="col-sm-2">
             <div class="list-group side-bar hidden-xs">
                 <a class="list-group-item active">编辑新闻区</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=时政新闻" class="list-group-item">时政新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=国际新闻" class="list-group-item">国际新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=社会新闻" class="list-group-item">社会新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=金融新闻" class="list-group-item">金融新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=娱乐新闻" class="list-group-item">娱乐新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=体育新闻" class="list-group-item">体育新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeEditor?reType=时政新闻" class="list-group-item">时政新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeEditor?reType=国际新闻" class="list-group-item">国际新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeEditor?reType=社会新闻" class="list-group-item">社会新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeEditor?reType=金融新闻" class="list-group-item">金融新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeEditor?reType=娱乐新闻" class="list-group-item">娱乐新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeEditor?reType=体育新闻" class="list-group-item">体育新闻</a>
 
             </div>
         </div>
 
         <div class="col-sm-7">
             <c:forEach var="report"  items="${reportList}">
-            <div class="news-list">
-                <div class="news-list-item clearfix">
+                <div class="news-list">
+                    <div class="news-list-item clearfix">
 
-                    <div class="col-xs-7">
-                        <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
-                        <div class="info">
-                            <span class="avatar"><img src="../static/img/logo.png"></span>
-                            <span>王花花</span>•
-                            <span>25k评论</span>•
-                            <span>10分钟前</span>
+                        <div class="col-xs-7">
+                            <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
+                            <div class="info">
+                                <span class="avatar"><img src="../static/img/logo.png"></span>
+                                <span>王花花</span>•
+                                <span>25k评论</span>•
+                                <span>10分钟前</span>
+                            </div>
                         </div>
                     </div>
+
+
+
                 </div>
-
-
-
-            </div>
             </c:forEach>
         </div>
         <div class="col-sm-3">

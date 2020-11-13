@@ -39,7 +39,7 @@
     </update>
 
     <select id="queryReportByType" resultType="Report" parameterType="String">
-        select *from news.report where reType=#{reType};
+        select *from news.report where reType=#{reType} and reState='正常';
     </select>
 
     <select id="queryReportByName" resultType="Report" parameterType="String">

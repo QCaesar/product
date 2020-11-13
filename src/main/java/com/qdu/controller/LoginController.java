@@ -82,7 +82,9 @@ public class LoginController {
     @RequestMapping("/updateUserInfo")
     public String updateUserInfo(User user){
         loginService.updateUserInfo(user);
-        return "test";
+        if (user.getUserStatus().equals("普通用户")||user.getUserStatus().equals("待审查")){
+            return "newsIndexUser";}
+        else return "newsIndexEditor";
     }
 
     @RequestMapping("/toupdateUserInfo")
@@ -110,7 +112,9 @@ public class LoginController {
     public String updateUserPwd(String userName,String userPwdPrevious,Model model,User user){
         if (userPwdPrevious.equals(loginService.queryUserPasswordByName(userName))){
             loginService.updateUserInfoPassword(user);
-            return "test";
+            if (user.getUserStatus().equals("普通用户")||user.getUserStatus().equals("待审查")){
+            return "newsIndexUser";}
+            else return "newsIndexEditor";
         }
 
         String userName1 = user.getUserName();
@@ -126,10 +130,11 @@ public class LoginController {
     public String toaddReportByEditor(){
         return "addReportEditor";
     }
+
     @RequestMapping("/addReportByEditor")
     public String addReportByEditor(Report report){
         loginService.addReportByEditor(report);
-        return "test";
+        return "newsIndexEditor";
     }
 
     @RequestMapping("/queryReportByEditor")
@@ -138,25 +143,32 @@ public class LoginController {
         model.addAttribute("reportList",reports);
         return "allReportEditor";
     }
-
+    //普通用户
     @RequestMapping("/updateUserStatusApply")
     public String updateUserStatusApply(User user){
         loginService.updateUserStatusApply(user);
         return "newsIndexUser";
     }
-
+    //普通用户
     @RequestMapping("/queryReportByType")
     public String queryReportByType(Model model,String reType){
         List<Report> reports=loginService.queryReportByType(reType);
         model.addAttribute("reportList",reports);
-        return "newsShow";
+        return "newsShowUser";
     }
-
+    //普通用户
     @RequestMapping("/showReport")
     public String showReport(String reName,Model model){
         Report report = loginService.queryReportByName(reName);
         model.addAttribute("report",report);
-        return "newsRead";
+        return "newsReadUser";
+    }
+
+    @RequestMapping("/queryReportByTypeEditor")
+    public String queryReportByTypeEditor(Model model,String reType) {
+        List<Report> reports = loginService.queryReportByType(reType);
+        model.addAttribute("reportList", reports);
+        return "newsShowEditor";
     }
 
 }

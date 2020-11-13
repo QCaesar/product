@@ -42,12 +42,12 @@
         <div class="col-sm-2">
             <div class="list-group side-bar hidden-xs">
                 <a class="list-group-item active">编辑新闻区</a>
-                <a href="/login/quertReportByType?reType='时政新闻'" class="list-group-item">时政新闻</a>
-                <a href="#" class="list-group-item">国际新闻</a>
-                <a href="#" class="list-group-item">社会新闻</a>
-                <a href="#" class="list-group-item">金融新闻</a>
-                <a href="#" class="list-group-item">娱乐新闻</a>
-                <a href="#" class="list-group-item">体育新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=时政新闻" class="list-group-item">时政新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=国际新闻" class="list-group-item">国际新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=社会新闻" class="list-group-item">社会新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=金融新闻" class="list-group-item">金融新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=娱乐新闻" class="list-group-item">娱乐新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=体育新闻" class="list-group-item">体育新闻</a>
 
             </div>
         </div>
