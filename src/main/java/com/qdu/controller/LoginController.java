@@ -94,6 +94,14 @@ public class LoginController {
         return "updateUserByMySelf";
     }
 
+    @RequestMapping("/toupdateEditorInfo")
+    public String toupdateEditorInfo(String userName,Model model){
+        User user = loginService.userRegisterQueryByName(userName);
+        model.addAttribute("QUser",user);
+        return "updateEditorByMySelf";
+    }
+
+    //普通用户修改密码
     @RequestMapping("/toupdateUserPwd")
     public String toupdateUserPwd(String userName,Model model){
         User user = loginService.userRegisterQueryByName(userName);
@@ -107,18 +115,43 @@ public class LoginController {
         model.addAttribute("error","原密码错误");
         return "updateUserPasswordByMySelf";
     }
+    //编辑修改密码
+    @RequestMapping("/toupdateEditorPwd")
+    public String toupdateEditorPwd(String userName,Model model){
+        User user = loginService.userRegisterQueryByName(userName);
+        model.addAttribute("QUser",user);
+        return "updateEditorPasswordByMySelf";
+    }
+    @RequestMapping("/toupdateEditorPwd1")
+    public String toupdateEditorPwd1(String userName,Model model){
+        User user = loginService.userRegisterQueryByName(userName);
+        model.addAttribute("QUser",user);
+        model.addAttribute("error","原密码错误");
+        return "updateEditorPasswordByMySelf";
+    }
 
     @RequestMapping("/updateUserPwd")
     public String updateUserPwd(String userName,String userPwdPrevious,Model model,User user){
         if (userPwdPrevious.equals(loginService.queryUserPasswordByName(userName))){
             loginService.updateUserInfoPassword(user);
-            if (user.getUserStatus().equals("普通用户")||user.getUserStatus().equals("待审查")){
-            return "newsIndexUser";}
-            else return "newsIndexEditor";
+
+            return "newsIndexUser";
         }
+
 
         String userName1 = user.getUserName();
         return "redirect:/login/toupdateUserPwd1?userName="+userName1;
+    }
+
+    @RequestMapping("/updateEditorPwd")
+    public String updateEditorPwd(String userName,String userPwdPrevious,Model model,User user){
+        if (userPwdPrevious.equals(loginService.queryUserPasswordByName(userName))){
+            loginService.updateUserInfoPassword(user);
+           return "newsIndexEditor";
+        }
+
+        String userName1 = user.getUserName();
+        return "redirect:/login/toupdateEditorPwd1?userName="+userName1;
     }
 
     @RequestMapping("/tomanagementIndex")
@@ -169,6 +202,21 @@ public class LoginController {
         List<Report> reports = loginService.queryReportByType(reType);
         model.addAttribute("reportList", reports);
         return "newsShowEditor";
+    }
+
+    @RequestMapping("/backToNewsIndexUser")
+    public String backToNewsIndexUser(){
+        return "newsIndexUser";
+    }
+
+    @RequestMapping("/backToNewsIndexEditor")
+    public String backToNewsIndexEditor(){
+        return "newsIndexEditor";
+    }
+
+    @RequestMapping("/logOut")
+    public String logOut(){
+        return "index1";
     }
 
 }

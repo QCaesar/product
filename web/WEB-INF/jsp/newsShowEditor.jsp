@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +26,7 @@
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
+                <li class="active"><a href="/login/backToNewsIndexEditor">首页</a></li>
                 <li><a href="#">国内</a></li>
                 <li><a href="#">国际</a></li>
                 <li><a href="#">数读</a></li>
@@ -33,10 +34,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
-                <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
-                <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a href="/login/toupdateEditorInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
+                <li><a href="/login/toupdateEditorPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
                 <li><a href="/login/toaddReportByEditor">添加新闻</a></li>
                 <li><a href="/login/queryReportByEditor?userName=${sessionScope.user.userName}">我的文章</a></li>
+                <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
     </div>
@@ -65,9 +67,9 @@
                             <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
                             <div class="info">
                                 <span class="avatar"><img src="../static/img/logo.png"></span>
-                                <span>王花花</span>•
-                                <span>25k评论</span>•
-                                <span>10分钟前</span>
+                                <span>作者：${report.reAuthor}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>时间：<fmt:formatDate value="${report.reAddTime}" pattern="yyyy-MM-dd  HH:mm:ss"/></span>
+
                             </div>
                         </div>
                     </div>

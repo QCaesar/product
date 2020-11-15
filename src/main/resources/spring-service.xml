@@ -20,6 +20,10 @@
         <property name="reportMapper" ref="reportMapper"/>
     </bean>
 
+    <bean id="CommentServiceImpl" class="com.qdu.service.CommentServiceImpl">
+        <property name="commentMapper" ref="commentMapper"/>
+    </bean>
+
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
