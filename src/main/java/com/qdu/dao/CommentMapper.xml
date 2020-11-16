@@ -25,4 +25,8 @@
         insert into news.comment(`commentUserName`,`commentReport`,`commentContent`)
         values (#{commentUserName},#{commentReport},#{commentContent});
     </insert>
+
+    <select id="myComment" resultType="Comment">
+        select *from news.comment where `commentUserName`=#{commentUserName};
+    </select>
 </mapper>

@@ -215,6 +215,15 @@ public class LoginController {
         model.addAttribute("reportList", reports);
         return "newsShowEditor";
     }
+
+    @RequestMapping("/queryReportByTypeAdmin")
+    public String queryReportByTypeAdmin(Model model,String reType){
+        List<Report> reports = loginService.queryReportByType(reType);
+        model.addAttribute("reportList", reports);
+        return "newsShow";
+    }
+
+
     //编辑
     @RequestMapping("/showReportEditor")
     public String showReportEditor(String reName,Model model){
@@ -224,6 +233,17 @@ public class LoginController {
         model.addAttribute("commentList",comments);
         return "newsReadEditor";
     }
+
+    @RequestMapping("/showReportAdmin")
+    public String showReportAdmin(String reName,Model model){
+        Report report = loginService.queryReportByName(reName);
+        List<Comment> comments=commentService.showCommentUser(reName);
+        model.addAttribute("report",report);
+        model.addAttribute("commentList",comments);
+        return "newsRead";
+    }
+
+
 
     @RequestMapping("/backToNewsIndexUser")
     public String backToNewsIndexUser(){
@@ -238,6 +258,11 @@ public class LoginController {
     @RequestMapping("/logOut")
     public String logOut(){
         return "index1";
+    }
+
+    @RequestMapping("/toadminIndex")
+    public String toadminIndex(){
+        return "newsIndex";
     }
 
 }

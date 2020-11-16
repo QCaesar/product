@@ -36,11 +36,14 @@
                 <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
                 <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
                 <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a href="/comment/myComment?commentUserName=${sessionScope.user.userName}">我的评论</a></li>
                 <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
     </div>
 </div>
+
+
 <div class="container">
     <div class="col-xs-8">
         <h1 class="news-title">${report.reName}</h1>

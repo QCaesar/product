@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,16 +26,16 @@
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
+                <li class="active"><a href="/login/toadminIndex">首页</a></li>
                 <li><a href="#">国内</a></li>
                 <li><a href="#">国际</a></li>
                 <li><a href="#">数读</a></li>
                 <li><a href="#">社会</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
-                <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
-                <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a>欢迎您 管理员 admin</a></li>
+
+                <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
     </div>
@@ -44,35 +45,35 @@
         <div class="col-sm-2">
             <div class="list-group side-bar hidden-xs">
                 <a class="list-group-item active">编辑新闻区</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=时政新闻" class="list-group-item">时政新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=国际新闻" class="list-group-item">国际新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=社会新闻" class="list-group-item">社会新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=金融新闻" class="list-group-item">金融新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=娱乐新闻" class="list-group-item">娱乐新闻</a>
-                <a href="${pageContext.request.contextPath}/login/queryReportByType?reType=体育新闻" class="list-group-item">体育新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeAdmin?reType=时政新闻" class="list-group-item">时政新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeAdmin?reType=国际新闻" class="list-group-item">国际新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeAdmin?reType=社会新闻" class="list-group-item">社会新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeAdmin?reType=金融新闻" class="list-group-item">金融新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeAdmin?reType=娱乐新闻" class="list-group-item">娱乐新闻</a>
+                <a href="${pageContext.request.contextPath}/login/queryReportByTypeAdmin?reType=体育新闻" class="list-group-item">体育新闻</a>
 
             </div>
         </div>
 
         <div class="col-sm-7">
             <c:forEach var="report"  items="${reportList}">
-            <div class="news-list">
-                <div class="news-list-item clearfix">
+                <div class="news-list">
+                    <div class="news-list-item clearfix">
 
-                    <div class="col-xs-7">
-                        <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
-                        <div class="info">
-                            <span class="avatar"><img src="../static/img/logo.png"></span>
-                            <span>王花花</span>•
-                            <span>25k评论</span>•
-                            <span>10分钟前</span>
+                        <div class="col-xs-7">
+                            <a href="/login/showReportAdmin?reName=${report.reName}" class="title">${report.reName}</a>
+                            <div class="info">
+                                <span class="avatar"><img src="../static/img/logo.png"></span>
+                                <span>作者：${report.reAuthor}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>时间：<fmt:formatDate value="${report.reAddTime}" pattern="yyyy-MM-dd  HH:mm:ss"/></span>
+
+                            </div>
                         </div>
                     </div>
+
+
+
                 </div>
-
-
-
-            </div>
             </c:forEach>
         </div>
         <div class="col-sm-3">

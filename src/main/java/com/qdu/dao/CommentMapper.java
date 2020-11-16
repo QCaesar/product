@@ -16,4 +16,6 @@ public interface CommentMapper {
 
     int addComment(Comment comment);
 
+    List<Comment> myComment(String commentUserName);
+
 }

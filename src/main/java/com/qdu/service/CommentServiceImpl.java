@@ -31,4 +31,8 @@ public class CommentServiceImpl implements CommentService {
     public int addComment(Comment comment) {
         return commentMapper.addComment(comment);
     }
+
+    public List<Comment> myComment(String commentUserName) {
+        return commentMapper.myComment(commentUserName);
+    }
 }

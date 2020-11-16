@@ -33,7 +33,7 @@
                 <li><a href="#">社会</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
+                <li><a>欢迎你 ${sessionScope.user.userStatus} ${sessionScope.user.userName}</a></li>
                 <li><a href="/login/toupdateEditorInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
                 <li><a href="/login/toupdateEditorPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
                 <li><a href="/login/toaddReportByEditor">添加新闻</a></li>

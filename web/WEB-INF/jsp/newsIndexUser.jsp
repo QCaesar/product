@@ -41,6 +41,7 @@
                 <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
                 <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
                 <li><a href="/login/updateUserStatusApply?userId=${sessionScope.user.userId}" onclick="apply()">申请成为编辑</a></li>
+                <li><a href="/comment/myComment?commentUserName=${sessionScope.user.userName}">我的评论</a></li>
                 <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>

@@ -72,4 +72,11 @@ public class CommentController {
 //        model.addAttribute("commentList",comments);
 //        return "newsReadUser";
 //    }
+
+    @RequestMapping("/myComment")
+    public String myComment(Model model,String commentUserName){
+        List<Comment> comments = commentService.myComment(commentUserName);
+        model.addAttribute("commentList",comments);
+        return "allCommentUser";
+    }
 }

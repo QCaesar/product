@@ -15,4 +15,6 @@ public interface CommentService {
     List<Comment> showCommentUser(String reName);
 
     int addComment(Comment comment);
+
+    List<Comment> myComment(String commentUserName);
 }

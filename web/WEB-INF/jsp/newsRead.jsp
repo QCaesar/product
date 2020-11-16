@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,20 +21,21 @@
         <div class="navbar-header">
             <a href="index.html" class="navbar-brand"></a>
         </div>
+        <!-- class="visible-xs-inline-block"：在超小屏幕上显示-->
         <label for="toggle-checkbox" id="toggle-label" class="visible-xs-inline-block">菜单</label>
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
+                <li class="active"><a href="/login/toadminIndex">首页</a></li>
                 <li><a href="#">国内</a></li>
                 <li><a href="#">国际</a></li>
                 <li><a href="#">数读</a></li>
                 <li><a href="#">社会</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
-                <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
-                <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a>欢迎您 管理员 admin</a></li>
+
+                <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
     </div>
@@ -40,38 +43,21 @@
 <div class="container">
     <div class="col-xs-8">
         <h1 class="news-title">${report.reName}</h1>
-        <div class="news-status">25k阅读•35分钟前发布
-            <div class="label label-default">教育</div>
-            <div class="label label-default">情感</div>
+        <div class="news-status">${report.reAuthor}&nbsp;|&nbsp;<fmt:formatDate value="${report.reAddTime}" pattern="yyyy-MM-dd  HH:mm:ss"/>&nbsp;
+            <div class="label label-default">${report.reType}</div>
+
         </div>
         <div class="news-content">
             <blockquote>
                 <p>记结婚高圆圆与赵又廷北京登</p>
             </blockquote>
-            <div>2013年7月，在电影《盲探》中饰演舞蹈学校的老师丁丁[35] ；11月6日，当代都市情感剧《咱们结婚吧》在央视一套及湖南卫视黄金档联合开播[36]
-                ，高圆圆在剧中饰演大龄剩女杨桃，该剧开播当天在两台收获了4.46的收视率，总的市场份额达到 12.83，刷新了2013年开播收视纪录[37]
-                ，随后取得在央视平均收视33城3.01、46城2.974，单日最高3.918、市场份额10.131，湖南卫视平均收视破2的成绩，而大结局在央一凭接近3点的数据获2013年年度收视冠军，在优酷等12家视频网站的总播放量也达到了40亿，创下2013年单剧网络点击纪录[9]
-                ，高圆圆凭借该剧获得第十八届北京影视春燕奖最佳女主角奖[10] ；12月，在武侠剧《天龙八部》中客串逍遥派弟子李碧云一角[38] 。
+            <div>${report.reContext}
             </div>
-            <img src="../static/img/2-4.jpg">
-            <div>2012年2月，主演文艺爱情电影《高海拔之恋Ⅱ》，饰演内地知名女星丁圆圆[33]
-                ；7月，在陈凯歌执导现实题材电影《搜索》中塑造一个受到网络伤害而选择自杀的都市白领叶蓝秋，该片上映后以1.8亿的票房成绩在大陆收官，随后陆续在港台和海外上映[34]
-            </div>
-            <div>2013年7月，在电影《盲探》中饰演舞蹈学校的老师丁丁[35] ；11月6日，当代都市情感剧《咱们结婚吧》在央视一套及湖南卫视黄金档联合开播[36]
-                ，高圆圆在剧中饰演大龄剩女杨桃，该剧开播当天在两台收获了4.46的收视率，总的市场份额达到 12.83，刷新了2013年开播收视纪录[37]
-                ，随后取得在央视平均收视33城3.01、46城2.974，单日最高3.918、市场份额10.131，湖南卫视平均收视破2的成绩，而大结局在央一凭接近3点的数据获2013年年度收视冠军，在优酷等12家视频网站的总播放量也达到了40亿，创下2013年单剧网络点击纪录[9]
-                ，高圆圆凭借该剧获得第十八届北京影视春燕奖最佳女主角奖[10] ；12月，在武侠剧《天龙八部》中客串逍遥派弟子李碧云一角[38] 。
-            </div>
-            <div>2013年7月，在电影《盲探》中饰演舞蹈学校的老师丁丁[35] ；11月6日，当代都市情感剧《咱们结婚吧》在央视一套及湖南卫视黄金档联合开播[36]
-                ，高圆圆在剧中饰演大龄剩女杨桃，该剧开播当天在两台收获了4.46的收视率，总的市场份额达到 12.83，刷新了2013年开播收视纪录[37]
-                ，随后取得在央视平均收视33城3.01、46城2.974，单日最高3.918、市场份额10.131，湖南卫视平均收视破2的成绩，而大结局在央一凭接近3点的数据获2013年年度收视冠军，在优酷等12家视频网站的总播放量也达到了40亿，创下2013年单剧网络点击纪录[9]
-                ，高圆圆凭借该剧获得第十八届北京影视春燕奖最佳女主角奖[10] ；12月，在武侠剧《天龙八部》中客串逍遥派弟子李碧云一角[38] 。
-            </div>
-            <div>2013年7月，在电影《盲探》中饰演舞蹈学校的老师丁丁[35] ；11月6日，当代都市情感剧《咱们结婚吧》在央视一套及湖南卫视黄金档联合开播[36]
-                ，高圆圆在剧中饰演大龄剩女杨桃，该剧开播当天在两台收获了4.46的收视率，总的市场份额达到 12.83，刷新了2013年开播收视纪录[37]
-                ，随后取得在央视平均收视33城3.01、46城2.974，单日最高3.918、市场份额10.131，湖南卫视平均收视破2的成绩，而大结局在央一凭接近3点的数据获2013年年度收视冠军，在优酷等12家视频网站的总播放量也达到了40亿，创下2013年单剧网络点击纪录[9]
-                ，高圆圆凭借该剧获得第十八届北京影视春燕奖最佳女主角奖[10] ；12月，在武侠剧《天龙八部》中客串逍遥派弟子李碧云一角[38] 。
-            </div>
+
+
+
+
+
         </div>
     </div>
     <div class="col-xs-4">
@@ -151,7 +137,41 @@
     </div>
 </div>
 <div class="footer">
-    Copyright © 2017 jkdev.cn | 极客开发者2017版
+
+    <div class="col-sm-7"><h2 style="color: black">评论区</h2>
+        <hr/>
+        <c:forEach var="comment"  items="${commentList}">
+
+            <h3>${comment.commentContent}</h3>
+            <div class="news-list">
+
+                <div class="news-list-item clearfix">
+
+                    <div class="col-xs-12">
+
+                        <div class="info">
+
+
+                            <span class="avatar"><img src="../static/img/logo.png"></span>
+                            <span>${comment.commentUserName}(${sessionScope.user.userStatus})</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <span><fmt:formatDate value="${comment.commentAddTime}" pattern="yyyy-MM-dd  HH:mm:ss"/></span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <hr/>
+        </c:forEach>
+
+
+
+        <br>
+        <br>
+        <br>
+    </div>
 </div>
 </body>
 </html>
