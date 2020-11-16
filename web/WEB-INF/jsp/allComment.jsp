@@ -31,24 +31,11 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small style="font-size: 35px">新闻列表</small>
+                    <small style="font-size: 35px">所有评论</small>
                 </h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 column">
-                <a class="btn btn-primary" href="${pageContext.request.contextPath}">新增新闻</a>
-                <a class="btn btn-primary" href="${pageContext.request.contextPath}">显示所有新闻</a>
-            </div>
-            <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
-                <form action="${pageContext.request.contextPath}" method="post" style="float:right">
-                    <span style="color: red;font-weight: bold">${error}</span>
-                    <input type="text" class="form-inline" name="reName" placeholder="请输入要查询的新闻标题" required>
-                    <input type="submit" value="查询" class="btn btn-primary">
-                </form>
-            </div>
-        </div>
+
     </div>
     <div class="row clearfix" style="overflow: hidden;white-space:nowrap;text-overflow:ellipsis;">
         <div class="col-md-12 column">
@@ -78,8 +65,8 @@
 
                         <td>
 
-                            <a href="${pageContext.request.contextPath}">修改</a>  |&nbsp;
-                            <a href="${pageContext.request.contextPath}">删除</a>
+                            <a href="${pageContext.request.contextPath}/comment/toshowComment?commentId=${comment.commentId}">详情</a>  |&nbsp;
+                            <a href="${pageContext.request.contextPath}/comment/deleteComment?commentId=${comment.commentId}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>

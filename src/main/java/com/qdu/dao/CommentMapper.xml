@@ -9,4 +9,20 @@
         select *from news.comment;
     </select>
 
+    <delete id="deleteComment" parameterType="int">
+        delete from news.comment where `commentId`=#{commentId};
+    </delete>
+
+    <select id="showComment" resultType="Comment">
+        select *from news.comment where `commentId`=#{commentId};
+    </select>
+
+    <select id="showCommentUser" resultType="Comment">
+        select *from news.comment where `commentReport`=#{reName};
+    </select>
+
+    <insert id="addComment" parameterType="Comment">
+        insert into news.comment(`commentUserName`,`commentReport`,`commentContent`)
+        values (#{commentUserName},#{commentReport},#{commentContent});
+    </insert>
 </mapper>

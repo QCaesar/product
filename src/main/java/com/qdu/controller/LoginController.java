@@ -1,7 +1,10 @@
 package com.qdu.controller;
 
+import com.qdu.pojo.Comment;
 import com.qdu.pojo.Report;
 import com.qdu.pojo.User;
+import com.qdu.service.CommentService;
+import com.qdu.service.CommentServiceImpl;
 import com.qdu.service.LoginService;
 import com.qdu.service.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,13 @@ public class LoginController {
     @Qualifier("LoginServiceImpl")
     public void setLoginService(LoginService loginService) {
         this.loginService = loginService;
+    }
+
+    private CommentService commentService=new CommentServiceImpl();
+    @Autowired
+    @Qualifier("CommentServiceImpl")
+    public void setCommentService(CommentService commentService) {
+        this.commentService = commentService;
     }
 
     @RequestMapping("/toRegister")
@@ -190,10 +200,12 @@ public class LoginController {
         return "newsShowUser";
     }
     //普通用户
-    @RequestMapping("/showReport")
-    public String showReport(String reName,Model model){
+    @RequestMapping("/showReportUser")
+    public String showReportUser(String reName,Model model){
         Report report = loginService.queryReportByName(reName);
+        List<Comment> comments=commentService.showCommentUser(reName);
         model.addAttribute("report",report);
+        model.addAttribute("commentList",comments);
         return "newsReadUser";
     }
 
@@ -202,6 +214,15 @@ public class LoginController {
         List<Report> reports = loginService.queryReportByType(reType);
         model.addAttribute("reportList", reports);
         return "newsShowEditor";
+    }
+    //编辑
+    @RequestMapping("/showReportEditor")
+    public String showReportEditor(String reName,Model model){
+        Report report = loginService.queryReportByName(reName);
+        List<Comment> comments=commentService.showCommentUser(reName);
+        model.addAttribute("report",report);
+        model.addAttribute("commentList",comments);
+        return "newsReadEditor";
     }
 
     @RequestMapping("/backToNewsIndexUser")

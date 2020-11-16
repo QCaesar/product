@@ -15,4 +15,20 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> queryAllComment() {
         return commentMapper.queryAllComment();
     }
+
+    public int deleteComment(int commentId) {
+        return commentMapper.deleteComment(commentId);
+    }
+
+    public Comment showComment(int commentId) {
+        return commentMapper.showComment(commentId);
+    }
+
+    public List<Comment> showCommentUser(String reName) {
+        return commentMapper.showCommentUser(reName);
+    }
+
+    public int addComment(Comment comment) {
+        return commentMapper.addComment(comment);
+    }
 }

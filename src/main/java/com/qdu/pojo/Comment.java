@@ -5,7 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class Comment {
-    private int commentId;
+    private Integer commentId;
     private String commentUserName;
     private String commentReport;
     private String commentContent;

@@ -64,7 +64,7 @@
                     <div class="news-list-item clearfix">
 
                         <div class="col-xs-7">
-                            <a href="/login/showReport?reName=${report.reName}" class="title">${report.reName}</a>
+                            <a href="/login/showReportEditor?reName=${report.reName}" class="title">${report.reName}</a>
                             <div class="info">
                                 <span class="avatar"><img src="../static/img/logo.png"></span>
                                 <span>作者：${report.reAuthor}</span>&nbsp;&nbsp;|&nbsp;&nbsp;

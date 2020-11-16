@@ -26,7 +26,7 @@
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/login/backToNewsIndexUser">首页</a></li>
+                <li class="active"><a href="/login/backToNewsIndexEditor">首页</a></li>
                 <li><a href="#">国内</a></li>
                 <li><a href="#">国际</a></li>
                 <li><a href="#">数读</a></li>
@@ -34,8 +34,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>欢迎你 普通用户 ${sessionScope.user.userName}</a></li>
-                <li><a href="/login/toupdateUserInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
-                <li><a href="/login/toupdateUserPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a href="/login/toupdateEditorInfo?userName=${sessionScope.user.userName}">个人中心</a></li>
+                <li><a href="/login/toupdateEditorPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
+                <li><a href="/login/toaddReportByEditor">添加新闻</a></li>
+                <li><a href="/login/queryReportByEditor?userName=${sessionScope.user.userName}">我的文章</a></li>
                 <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
@@ -167,13 +169,13 @@
             <hr/>
         </c:forEach>
 
-        <form action="${pageContext.request.contextPath}/comment/addCommentUser" method="post">
+        <form action="${pageContext.request.contextPath}/comment/addCommentEditor" method="post">
             <input type="hidden" name="commentUserName" value="${sessionScope.user.userName}">
             <input type="hidden" name="commentReport" value="${report.reName}">
-        <div class="form-group">
+            <div class="form-group">
 
-            <textarea class="form-control"  id="exampleFormControlTextarea1" rows="3" name="commentContent" placeholder="请输入评论！"></textarea>
-        </div>
+                <textarea class="form-control"  id="exampleFormControlTextarea1" rows="3" name="commentContent" placeholder="请输入评论！"></textarea>
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">提交评论</button>
             </div>
