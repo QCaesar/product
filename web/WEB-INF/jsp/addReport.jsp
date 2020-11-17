@@ -13,9 +13,9 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>新增新闻报道</small>
+                    <small style="font-size: 35px">新增新闻报道</small>
                     <div style="float: right">
-                        <a class="btn btn-primary" href="${pageContext.request.contextPath}">返回</a>
+                        <a class="btn btn-primary" onclick="window.history.back()" >返回</a>
                     </div>
                 </h1>
 

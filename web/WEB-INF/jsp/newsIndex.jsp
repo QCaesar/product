@@ -38,6 +38,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>欢迎您 管理员 admin</a></li>
+                <li><a href="/login/tomanagementIndex">后台页面</a></li>
 
                 <li><a href="/login/logOut">注销</a></li>
             </ul>

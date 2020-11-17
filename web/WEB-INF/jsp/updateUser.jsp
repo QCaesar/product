@@ -12,7 +12,7 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>新增用户</small>
+                    <small style="font-size: 35px">修改用户信息</small>
                     <div style="float: right">
                         <a class="btn btn-primary" href="${pageContext.request.contextPath}/user/allUser">返回</a>
                     </div>
@@ -29,7 +29,7 @@
 
         <div class="form-group">
             <label>用户名称</label>
-            <input type="text" name="userName" value="${QUser.userName}" class="form-control" required>
+            <input type="text" name="userName" value="${QUser.userName}" class="form-control" readonly required>
         </div>
         <div class="form-group">
             <label>用户密码</label>

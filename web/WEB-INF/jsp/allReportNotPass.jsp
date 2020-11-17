@@ -30,7 +30,7 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>新闻列表</small>
+                    <small style="font-size: 35px">审核新闻</small>
                 </h1>
             </div>
         </div>

@@ -34,7 +34,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>欢迎您 管理员 admin</a></li>
-
+                <li><a href="/login/tomanagementIndex">后台页面</a></li>
                 <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
@@ -49,9 +49,9 @@
         </div>
         <div class="news-content">
             <blockquote>
-                <p>记结婚高圆圆与赵又廷北京登</p>
+                <p>${report.reName}</p>
             </blockquote>
-            <div>${report.reContext}
+            <div>&nbsp;&nbsp;${report.reContext}
             </div>
 
 
@@ -61,48 +61,48 @@
         </div>
     </div>
     <div class="col-xs-4">
-        <div class="side-bar-card">
-            <div class="card-title">相关推荐</div>
-            <div class="card-body">
-                <div class="list">
-                    <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
-                        <div class="col-xs-7">
-                            <div class="title">记结婚高圆圆与赵又廷北京登</div>
-                            <div class="desc">25k阅读•35分钟前发布</div>
-                        </div>
-                    </div>
-                    <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
-                        <div class="col-xs-7">
-                            <div class="title">记结婚高圆圆与赵又廷北京登</div>
-                            <div class="desc">25k阅读•35分钟前发布</div>
-                        </div>
-                    </div>
-                    <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
-                        <div class="col-xs-7">
-                            <div class="title">记结婚高圆圆与赵又廷北京登</div>
-                            <div class="desc">25k阅读•35分钟前发布</div>
-                        </div>
-                    </div>
-                    <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
-                        <div class="col-xs-7">
-                            <div class="title">记结婚高圆圆与赵又廷北京登</div>
-                            <div class="desc">25k阅读•35分钟前发布</div>
-                        </div>
-                    </div>
-                    <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
-                        <div class="col-xs-7">
-                            <div class="title">记结婚高圆圆与赵又廷北京登</div>
-                            <div class="desc">25k阅读•35分钟前发布</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<%--        <div class="side-bar-card">--%>
+<%--            <div class="card-title">相关推荐</div>--%>
+<%--            <div class="card-body">--%>
+<%--                <div class="list">--%>
+<%--                    <div class="item clearfix">--%>
+<%--                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>--%>
+<%--                        <div class="col-xs-7">--%>
+<%--                            <div class="title">记结婚高圆圆与赵又廷北京登</div>--%>
+<%--                            <div class="desc">25k阅读•35分钟前发布</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="item clearfix">--%>
+<%--                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>--%>
+<%--                        <div class="col-xs-7">--%>
+<%--                            <div class="title">记结婚高圆圆与赵又廷北京登</div>--%>
+<%--                            <div class="desc">25k阅读•35分钟前发布</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="item clearfix">--%>
+<%--                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>--%>
+<%--                        <div class="col-xs-7">--%>
+<%--                            <div class="title">记结婚高圆圆与赵又廷北京登</div>--%>
+<%--                            <div class="desc">25k阅读•35分钟前发布</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="item clearfix">--%>
+<%--                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>--%>
+<%--                        <div class="col-xs-7">--%>
+<%--                            <div class="title">记结婚高圆圆与赵又廷北京登</div>--%>
+<%--                            <div class="desc">25k阅读•35分钟前发布</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="item clearfix">--%>
+<%--                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>--%>
+<%--                        <div class="col-xs-7">--%>
+<%--                            <div class="title">记结婚高圆圆与赵又廷北京登</div>--%>
+<%--                            <div class="desc">25k阅读•35分钟前发布</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <div class="side-bar-card">
             <div class="card-title">24小时热闻</div>
             <div class="card-body">
@@ -137,6 +137,7 @@
     </div>
 </div>
 <div class="footer">
+    <div class="col-sm-1"></div>
 
     <div class="col-sm-7"><h2 style="color: black">评论区</h2>
         <hr/>

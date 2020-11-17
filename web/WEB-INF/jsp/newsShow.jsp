@@ -34,7 +34,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>欢迎您 管理员 admin</a></li>
-
+                <li><a href="/login/tomanagementIndex">后台页面</a></li>
                 <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
@@ -60,7 +60,7 @@
                 <div class="news-list">
                     <div class="news-list-item clearfix">
 
-                        <div class="col-xs-7">
+                        <div class="col-xs-10">
                             <a href="/login/showReportAdmin?reName=${report.reName}" class="title">${report.reName}</a>
                             <div class="info">
                                 <span class="avatar"><img src="../static/img/logo.png"></span>

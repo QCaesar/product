@@ -62,7 +62,7 @@
                 <div class="news-list">
                     <div class="news-list-item clearfix">
 
-                        <div class="col-xs-7">
+                        <div class="col-xs-10">
                             <a href="/login/showReportUser?reName=${report.reName}" class="title">${report.reName}</a>
                             <div class="info">
                                 <span class="avatar"><img src="../static/img/logo.png"></span>

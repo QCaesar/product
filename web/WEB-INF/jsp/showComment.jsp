@@ -12,9 +12,9 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>评论展示</small>
+                    <small style="font-size: 35px">评论详细</small>
                     <div style="float: right">
-                        <a class="btn btn-primary" href="${pageContext.request.contextPath}">返回</a>
+                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/comment/allComment">返回</a>
                     </div>
                 </h1>
 

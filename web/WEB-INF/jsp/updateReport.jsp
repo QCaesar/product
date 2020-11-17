@@ -12,7 +12,7 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>新增用户</small>
+                    <small style="font-size: 35px">修改新闻</small>
                     <div style="float: right">
                         <a class="btn btn-primary" href="${pageContext.request.contextPath}/report/allReport">返回</a>
                     </div>

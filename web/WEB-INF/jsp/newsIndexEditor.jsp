@@ -36,6 +36,7 @@
                 <li><a href="/login/toupdateEditorPwd?userName=${sessionScope.user.userName}">修改密码</a></li>
                 <li><a href="/login/toaddReportByEditor">添加新闻</a></li>
                 <li><a href="/login/queryReportByEditor?userName=${sessionScope.user.userName}">我的文章</a></li>
+                <li><a href="/comment/myCommentEditor?commentUserName=${sessionScope.user.userName}">我的评论</a></li>
                 <li><a href="/login/logOut">注销</a></li>
             </ul>
         </div>
