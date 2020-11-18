@@ -118,7 +118,11 @@
         </div>
         <div class="col-sm-3">
             <div class="search-bar">
-                <input type="search" class="form-control" placeholder="搜一下">
+                <form action="/login/reportQueryEditor" method="post">
+                    <div class="col-xs-10"> <input type="search" class="form-control" name="reName" placeholder="搜一下" required></div>
+                    <div class="col-xs-2"><input type="submit" value="查询" class="btn btn-primary"></div>
+                </form>
+                <br><br>
             </div>
             <div class="side-bar-card flag clearfix">
                 <div class="col-xs-5">
@@ -129,37 +133,39 @@
                     <div>举报电话：12377</div>
                 </div>
             </div>
-            <div class="side-bar-card">
-                <div class="card-title">24小时热闻</div>
-                <div class="card-body">
-                    <div class="list">
-                        <div class="item">
-                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-                            <div class="desc">15k阅读　1k评论</div>
-                        </div>
-                        <div class="item">
-                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-                            <div class="desc">15k阅读　1k评论</div>
-                        </div>
-                        <div class="item">
-                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-                            <div class="desc">15k阅读　1k评论</div>
-                        </div>
-                        <div class="item">
-                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-                            <div class="desc">15k阅读　1k评论</div>
-                        </div>
-                        <div class="item">
-                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-                            <div class="desc">15k阅读　1k评论</div>
-                        </div>
-                        <div class="item">
-                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>
-                            <div class="desc">15k阅读　1k评论</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<%--            <div class="side-bar-card">--%>
+<%--                <div class="card-title">24小时热闻</div>--%>
+<%--                <div class="card-body">--%>
+<%--                    <div class="list">--%>
+<%--                        <div class="item">--%>
+<%--                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>--%>
+<%--                            <div class="desc">15k阅读　1k评论</div>--%>
+<%--                        </div>--%>
+<%--                        <div class="item">--%>
+<%--                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>--%>
+<%--                            <div class="desc">15k阅读　1k评论</div>--%>
+<%--                        </div>--%>
+<%--                        <div class="item">--%>
+<%--                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>--%>
+<%--                            <div class="desc">15k阅读　1k评论</div>--%>
+<%--                        </div>--%>
+<%--                        <div class="item">--%>
+<%--                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>--%>
+<%--                            <div class="desc">15k阅读　1k评论</div>--%>
+<%--                        </div>--%>
+<%--                        <div class="item">--%>
+<%--                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>--%>
+<%--                            <div class="desc">15k阅读　1k评论</div>--%>
+<%--                        </div>--%>
+<%--                        <div class="item">--%>
+<%--                            <a class="title" href="#">人工智能时代的到来，把全世界的科技巨头和汽车厂商推向了研发自动驾驶技术的浪潮中。</a>--%>
+<%--                            <div class="desc">15k阅读　1k评论</div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+            <%@include file="hotNews.jsp"%>
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ package com.qdu.dao;
 import com.qdu.pojo.Report;
 import com.qdu.pojo.User;
 
+import javax.xml.bind.annotation.XmlList;
 import java.util.List;
 
 public interface LoginMapper {
@@ -30,4 +31,6 @@ public interface LoginMapper {
     List<Report> queryReportByType(String reType);
 
     Report queryReportByName(String reName);
+
+    List<Report> queryReport(String reName);
 }

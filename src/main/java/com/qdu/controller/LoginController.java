@@ -265,4 +265,24 @@ public class LoginController {
         return "newsIndex";
     }
 
+    @RequestMapping("/reportQuery")
+    public String reportQuery(Model model,String reName){
+        List<Report> reports=loginService.queryReport(reName);
+        model.addAttribute("reportList",reports);
+        return "newsQuery";
+    }
+
+    @RequestMapping("/reportQueryUser")
+    public String reportQueryUser(Model model,String reName){
+        List<Report> reports=loginService.queryReport(reName);
+        model.addAttribute("reportList",reports);
+        return "newsQueryUser";
+    }
+
+    @RequestMapping("/reportQueryEditor")
+    public String reportQueryEditor(Model model,String reName){
+        List<Report> reports=loginService.queryReport(reName);
+        model.addAttribute("reportList",reports);
+        return "newsQueryEditor";
+    }
 }

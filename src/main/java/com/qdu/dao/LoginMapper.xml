@@ -45,4 +45,8 @@
     <select id="queryReportByName" resultType="Report" parameterType="String">
         select *from news.report where `reName`=#{reName};
     </select>
+
+    <select id="queryReport" resultType="Report">
+        select *from news.report where `reName` like concat('%',#{reName},'%');
+    </select>
 </mapper>

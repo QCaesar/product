@@ -29,4 +29,6 @@ public interface LoginService {
     List<Report> queryReportByType(String reType);
 
     Report queryReportByName(String reName);
+
+    List<Report> queryReport(String reName);
 }

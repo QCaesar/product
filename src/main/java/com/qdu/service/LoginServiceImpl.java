@@ -53,4 +53,8 @@ public class LoginServiceImpl implements LoginService{
     public Report queryReportByName(String reName) {
         return loginMapper.queryReportByName(reName);
     }
+
+    public List<Report> queryReport(String reName) {
+        return loginMapper.queryReport(reName);
+    }
 }
