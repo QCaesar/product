@@ -18,6 +18,11 @@
 
 <body>
 <%@include file="managementDaoHang.jsp"%>
+
+
+<img src="../static/img/manageIndex.png" style="width: 100%;height: auto"/>
+
+
 <%--<div class="dropdown">--%>
 <%--    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
 <%--        Dropdown link--%>

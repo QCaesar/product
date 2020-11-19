@@ -75,10 +75,9 @@ public class ReportController {
 
     @RequestMapping("/queryReport")
     public String queryReport(String reName,Model model){
-        Report report = reportService.queryReportByName(reName);
-        List<Report> list=new ArrayList<Report>();
-        list.add(report);
-        if (report==null) {
+        List<Report> list = reportService.queryReportByName(reName);
+
+        if (list.isEmpty()) {
             list=reportService.queryAllReport();
             model.addAttribute("error","未查找到");
         }

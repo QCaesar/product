@@ -21,7 +21,7 @@ public class ReportServiceImpl implements ReportService {
         return reportMapper.queryReportById(reId);
     }
 
-    public Report queryReportByName(String reName) {
+    public List<Report> queryReportByName(String reName) {
         return reportMapper.queryReportByName(reName);
     }
 

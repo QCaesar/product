@@ -40,13 +40,7 @@
                 <a class="btn btn-primary" href="${pageContext.request.contextPath}/report/allReport">显示所有新闻</a>
             </div>
             <div class="col-md-4 column"></div>
-            <div class="col-md-4 column">
-                <form action="${pageContext.request.contextPath}/user/queryUser" method="post" style="float:right">
-                    <span style="color: red;font-weight: bold">${error}</span>
-                    <input type="text" class="form-inline" name="userName" placeholder="请输入要查询的新闻标题" required>
-                    <input type="submit" value="查询" class="btn btn-primary">
-                </form>
-            </div>
+
         </div>
     </div>
     <div class="row clearfix" style="overflow: hidden;white-space:nowrap;text-overflow:ellipsis;">

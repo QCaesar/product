@@ -21,7 +21,7 @@
     </select>
 
     <select id="queryReportByName" resultType="Report">
-        select * from news.report where binary `reName`=#{reName}
+        select * from news.report where binary `reName` like concat('%',#{reName},'%');
     </select>
 
     <select id="queryAllReportNotPass" resultType="Report">

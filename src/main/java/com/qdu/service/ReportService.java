@@ -12,7 +12,7 @@ public interface ReportService {
     Report queryReportById(int reId);
 
     //根据名字查询新闻
-    Report  queryReportByName(String reName);
+    List<Report>  queryReportByName(String reName);
 
     //添加
     int addReport(Report report);
