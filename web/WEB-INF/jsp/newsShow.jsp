@@ -129,8 +129,6 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    Copyright © Caesar && PARTNERS
-</div>
+
 </body>
 </html>

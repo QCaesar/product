@@ -42,7 +42,13 @@ public class LoginInterceptor  implements HandlerInterceptor {
             return true;
         }
 
+        if(request.getRequestURI().contains("toRegister")){
+            return true;
+        }
 
+        if(request.getRequestURI().contains("userQuery")){
+            return true;
+        }
         request.getRequestDispatcher("/WEB-INF/jsp/userLogin.jsp").forward(request,response);
 
         return false;

@@ -73,8 +73,6 @@ public class LoginController {
         if (userName.equals("admin") && userPwd.equals("123456")) {
             return "managementIndex";
         }
-
-
         if(user!=null&&user.getUserPwd().equals(userPwd)&&user.getUserState().equals("黑名单")){
             model.addAttribute("error","用户已被拉入黑名单");
             return "userLogin";
@@ -85,11 +83,8 @@ public class LoginController {
                 {return "newsIndexUser";}
             if (user.getUserStatus().equals("编辑"))
                 {return "newsIndexEditor";}
-
-
         }
         else {
-
             model.addAttribute("error", "用户名不存在或密码错误！");
             return "userLogin";
         }
