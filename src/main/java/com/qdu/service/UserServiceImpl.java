@@ -48,4 +48,8 @@ public class UserServiceImpl implements UserService {
     public int updateUserStatusNot(User user) {
         return userMapper.updateUserStatusNot(user);
     }
+
+    public int updateUserState(User user) {
+        return userMapper.updateUserState(user);
+    }
 }

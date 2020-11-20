@@ -30,4 +30,6 @@ public interface UserMapper {
     int updateUserStatus(User user);
 
     int updateUserStatusNot(User user);
+
+    int updateUserState(User user);
 }

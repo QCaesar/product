@@ -28,5 +28,6 @@ public interface UserService {
     int updateUserStatus(User user);
 
     int updateUserStatusNot(User user);
-    
+
+    int updateUserState(User user);
 }

@@ -45,7 +45,7 @@
             <table class="table table-hover table-striped">
                 <thead>
                 <tr>
-                    <th>用户ID</th>
+
                     <th>用户名称</th>
                     <th>用户密码</th>
                     <th>用户电话</th>
@@ -60,7 +60,7 @@
                 <tbody>
                 <c:forEach var="user" items="${list}">
                     <tr>
-                        <td>${user.userId}</td>
+
                         <td>${user.userName}</td>
                         <td>${user.userPwd}</td>
                         <td>${user.userTel}</td>
@@ -69,7 +69,7 @@
                         <td>${user.userState}</td>
 
                         <td>
-
+                            <a href="${pageContext.request.contextPath}/user/updateUserState?userId=${user.userId}">拉黑</a>  |
                             <a href="${pageContext.request.contextPath}/user/toupdateUser?userId=${user.userId}">修改</a>  |&nbsp;
                             <a href="${pageContext.request.contextPath}/user/deleteUser?userId=${user.userId}">删除</a>
                         </td>

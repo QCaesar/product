@@ -92,4 +92,10 @@ public class UserController {
         return "redirect:/user/queryUserWaitPass";
     }
 
+    @RequestMapping("/updateUserState")
+    public String updateUserState(User user){
+        userService.updateUserState(user);
+        return "redirect:/user/allUser";
+    }
+
 }
